@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interativa - Animações</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Página Interativa com Animações</h1>
+        
+        <!-- Seção de Folha Virando LENTA -->
+        <div class="animation-section">
+            <h2>📖 Folha Virando (LENTA)</h2>
+            <div class="page-flip-container">
+                <div class="page" id="page1">
+                    <div class="page-content">
+                        <h3>Página 1</h3>
+                        <p>Clique para virar a página lentamente</p>
+                    </div>
+                </div>
+                <div class="page page-back" id="page2">
+                    <div class="page-content">
+                        <h3>Página 2</h3>
+                        <p>A página virou suavemente!</p>
+                    </div>
+                </div>
+            </div>
+            <button id="flipBtn" class="flip-button">Virar Página</button>
+        </div>
+
+        <!-- Seção de Torneira Pingando -->
+        <div class="animation-section">
+            <h2>💧 Torneira Pingando</h2>
+            <div class="faucet-container">
+                <svg class="faucet" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="35" y="10" width="30" height="15" fill="#888" rx="3"/>
+                    <circle cx="50" cy="35" r="8" fill="#999"/>
+                    <rect x="45" y="35" width="10" height="20" fill="#666"/>
+                </svg>
+                <div class="water-drops" id="waterDrops"></div>
+            </div>
+            <button id="toggleFaucet" class="faucet-button">Ligar Torneira</button>
+        </div>
+
+        <!-- Canvas para animações -->
+        <div class="animation-section">
+            <h2>🎨 Animação em Canvas</h2>
+            <canvas id="canvas" width="600" height="300"></canvas>
+        </div>
+    </div>
+
+    <script src="animations.js"></script>
+</body>
+</html>
