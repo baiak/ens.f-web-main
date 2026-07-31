@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.animation-section {
+    margin-bottom: 60px;
+    padding: 30px;
+    border-radius: 15px;
+    background: #f8f9fa;
+    border-left: 5px solid #667eea;
+}
+
+/* ============ ANIMAÇÃO FOLHA VIRANDO LENTA ============ */
+.page-flip-container {
+    width: 300px;
+    height: 400px;
+    margin: 30px auto;
+    perspective: 1000px;
+    position: relative;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+
+#page1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    z-index: 2;
+}
+
+#page1.flipping {
+    animation: pageFlipSlow 4s ease-in-out forwards;
+}
+
+#page2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+@keyframes pageFlipSlow {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+.page-content {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.flip-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 40px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.flip-button:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.flip-button:active {
+    transform: translateY(0);
+}
+
+/* ============ ANIMAÇÃO TORNEIRA PINGANDO RÁPIDA ============ */
+.faucet-container {
+    width: 200px;
+    height: 300px;
+    margin: 30px auto;
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.faucet {
+    width: 100px;
+    height: 150px;
+    position: relative;
+}
+
+.water-drops {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 60px;
+}
+
+.drop {
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 30% 30%, #87ceeb, #0099ff);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: dropFallFast 0.8s ease-in infinite;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes dropFallFast {
+    0% {
+        top: 0;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        top: 100px;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+.faucet-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 40px;
+    background: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 153, 255, 0.4);
+}
+
+.faucet-button:hover {
+    background: #0077cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 153, 255, 0.6);
+}
+
+/* ============ ANIMAÇÃO PAI COM MENINO NA CADEIRA RÁPIDA ============ */
+.wheelchair-container {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, #87ceeb 0%, #e0f6ff 100%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.father-wheelchair-group {
+    position: absolute;
+    animation: moveRightFast 3s ease-in-out infinite;
+}
+
+.father {
+    position: relative;
+    width: 60px;
+    height: 80px;
+}
+
+.father-head {
+    width: 25px;
+    height: 25px;
+    background: #d4a574;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 17px;
+}
+
+.father-body {
+    width: 40px;
+    height: 35px;
+    background: #4169e1;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+.father-arm {
+    width: 35px;
+    height: 8px;
+    background: #d4a574;
+    position: absolute;
+    top: 35px;
+    border-radius: 4px;
+}
+
+.father-arm-left {
+    left: -5px;
+}
+
+.father-arm-right {
+    right: -5px;
+}
+
+.wheelchair {
+    position: relative;
+    width: 80px;
+    height: 70px;
+    margin-left: 20px;
+}
+
+.wheelchair-seat {
+    width: 50px;
+    height: 30px;
+    background: #8b4513;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    border-radius: 3px;
+}
+
+.wheelchair-backrest {
+    width: 8px;
+    height: 40px;
+    background: #555;
+    position: absolute;
+    top: 15px;
+    right: 18px;
+}
+
+.wheelchair-wheel {
+    width: 35px;
+    height: 35px;
+    border: 4px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.wheel-left {
+    left: 10px;
+    animation: wheelSpinFast 0.6s linear infinite;
+}
+
+.wheel-right {
+    right: 10px;
+    animation: wheelSpinFast 0.6s linear infinite;
+}
+
+.wheel-spoke {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #666;
+    position: absolute;
+}
+
+.child {
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    left: 28px;
+    top: 8px;
+}
+
+.child-head {
+    width: 18px;
+    height: 18px;
+    background: #f4a460;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 8px;
+}
+
+.child-body {
+    width: 25px;
+    height: 20px;
+    background: #ff69b4;
+    position: absolute;
+    top: 18px;
+    left: 5px;
+    border-radius: 2px;
+}
+
+.child-smile {
+    width: 8px;
+    height: 3px;
+    background: #000;
+    border-radius: 0 0 4px 4px;
+    position: absolute;
+    top: 7px;
+    left: 13px;
+}
+
+.child-eye {
+    width: 2px;
+    height: 2px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+}
+
+.child-eye-left {
+    left: 10px;
+}
+
+.child-eye-right {
+    left: 14px;
+}
+
+@keyframes moveRightFast {
+    0% {
+        left: -150px;
+    }
+    50% {
+        left: calc(100% + 50px);
+    }
+    100% {
+        left: -150px;
+    }
+}
+
+@keyframes wheelSpinFast {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wheelchair-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 40px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.wheelchair-button:hover {
+    background: #ee5a52;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+/* Canvas */
+#canvas {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #667eea;
+}
