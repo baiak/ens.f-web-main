@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Interativa - Animações</title>
+    <title>Educação Adventista - Projeto Interativo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>📖 Página Interativa com Animações</h1>
+        <h1>📖 Educação Adventista - Ensino Fundamental</h1>
         
         <!-- Seção de Folha Virando LENTA -->
         <div class="animation-section">
-            <h2>📖 Folha Virando (LENTA)</h2>
+            <h2>📖 Folha Virando (LENTA) - 4 segundos</h2>
             <div class="page-flip-container">
                 <div class="page" id="page1">
                     <div class="page-content">
                         <h3>Página 1</h3>
                         <p>Clique para virar a página lentamente</p>
+                        <p>Os personagens se assustam! 😮</p>
                     </div>
                 </div>
                 <div class="page page-back" id="page2">
@@ -27,28 +28,26 @@
                     </div>
                 </div>
             </div>
-            <button id="flipBtn" class="flip-button">Virar Página</button>
+            <button id="flipBtn" class="flip-button">📖 Virar Página</button>
         </div>
 
         <!-- Seção de Torneira Pingando RÁPIDA -->
         <div class="animation-section">
-            <h2>💧 Torneira Pingando (RÁPIDA)</h2>
+            <h2>💧 Torneira Pingando (RÁPIDA) - 0.8 segundos</h2>
             <div class="faucet-container">
                 <svg class="faucet" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
                     <rect x="35" y="10" width="30" height="15" fill="#888" rx="3"/>
                     <circle cx="50" cy="35" r="8" fill="#999"/>
                     <rect x="45" y="35" width="10" height="20" fill="#666"/>
                 </svg>
-                <div class="water-drops" id="waterDrops">
-                    <div class="drop"></div>
-                </div>
+                <div class="water-drops" id="waterDrops"></div>
             </div>
-            <button id="toggleFaucet" class="faucet-button">Ligar Torneira</button>
+            <button id="toggleFaucet" class="faucet-button">💧 Ligar Torneira</button>
         </div>
 
         <!-- Seção de Pai com Menino na Cadeira RÁPIDA -->
         <div class="animation-section">
-            <h2>👨‍👦 Pai com Menino na Cadeira de Rodas (RÁPIDA)</h2>
+            <h2>👨‍👦 Pai com Menino na Cadeira de Rodas (RÁPIDA) - 3 segundos</h2>
             <div class="wheelchair-container">
                 <div class="father-wheelchair-group" id="wheelchairGroup">
                     <div class="father">
@@ -72,16 +71,29 @@
                     </div>
                 </div>
             </div>
-            <button id="toggleWheelchair" class="wheelchair-button">Iniciar Passeio</button>
+            <button id="toggleWheelchair" class="wheelchair-button">👨‍👦 Iniciar Passeio</button>
         </div>
 
         <!-- Canvas para animações -->
         <div class="animation-section">
-            <h2>🎨 Animação em Canvas</h2>
+            <h2>🎨 Animação em Canvas - Partículas</h2>
             <canvas id="canvas" width="600" height="300"></canvas>
+        </div>
+
+        <!-- Info de Controles -->
+        <div class="info-section">
+            <h3>⌨️ Atalhos de Teclado:</h3>
+            <ul>
+                <li><kbd>R</kbd> = Riso da criança 😄</li>
+                <li><kbd>E</kbd> = Som de espanto 😮</li>
+                <li><kbd>P</kbd> = Riso do pai 😂</li>
+            </ul>
         </div>
     </div>
 
+    <!-- Scripts em ordem -->
+    <script src="character-audio.js"></script>
     <script src="animations.js"></script>
+    <script src="my-project.js"></script>
 </body>
 </html>
