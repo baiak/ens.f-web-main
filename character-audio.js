@@ -157,13 +157,34 @@ if (wheelchairGroup) {
     });
 }
 
-// Folha virando
+// Folha virando - ADICIONAR ESPANTO QUANDO VIRA A PÁGINA
 const page1 = document.getElementById('page1');
 const flipBtn = document.getElementById('flipBtn');
 
 if (flipBtn) {
     flipBtn.addEventListener('click', () => {
+        // Tocar som de espanto quando clicar no botão virar página
         playAmazement();
+        
+        // Também tocar som do menino na cadeira de espanto
+        setTimeout(() => {
+            playAmazement();
+        }, 200);
+    });
+}
+
+// Monitorer a animação da página para tocar som no meio da virada
+if (page1) {
+    page1.addEventListener('animationstart', () => {
+        // Som ao iniciar a animação
+    });
+    
+    page1.addEventListener('animationiteration', () => {
+        // Som ao iterar (repetir) a animação
+    });
+    
+    page1.addEventListener('animationend', () => {
+        // Som ao terminar a animação
     });
 }
 
@@ -172,9 +193,7 @@ const toggleFaucet = document.getElementById('toggleFaucet');
 
 if (toggleFaucet) {
     toggleFaucet.addEventListener('click', () => {
-        if (!document.getElementById('waterDrops').children.length) {
-            playLaughter();
-        }
+        playLaughter();
     });
 }
 
@@ -182,9 +201,9 @@ if (toggleFaucet) {
 if (flipBtn) {
     // Adicionar atalhos de teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'r') playLaughter();
-        if (e.key === 'e') playAmazement();
-        if (e.key === 'p') playFatherLaughter();
+        if (e.key === 'r' || e.key === 'R') playLaughter();
+        if (e.key === 'e' || e.key === 'E') playAmazement();
+        if (e.key === 'p' || e.key === 'P') playFatherLaughter();
     });
 }
 
